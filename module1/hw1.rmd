@@ -11,7 +11,7 @@ I have provided you with data about the 5,000 fastest growing companies in the U
 
 ```{r}
 
-inc <- read.csv("https://raw.githubusercontent.com/charleyferrari/CUNY_DATA608/master/lecture1/Data/inc5000_data.csv", header= TRUE)
+inc <- read.csv("https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module1/Data/inc5000_data.csv", header= TRUE)
 
 ```
 
