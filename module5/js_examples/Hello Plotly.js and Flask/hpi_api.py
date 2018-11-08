@@ -5,7 +5,7 @@ import pandas as pd
 app = Flask(__name__)
 
 
-# This is an API meant to serve some housing price index data
+# This is an API meant to serve plotly graph objects given a metro and seasonality
 @app.route('/hpi/<string:seasonality>/<string:metro>')
 def return_hpi_data(seasonality, metro):
 
@@ -41,9 +41,8 @@ def return_hpi_data(seasonality, metro):
 
     return jsonify(fig)
 
+
 # This is an API meant to serve available values for seasonality and metro
-
-
 @app.route('/hpi/values')
 def return_hpi_defaults():
     # Read in raw data
