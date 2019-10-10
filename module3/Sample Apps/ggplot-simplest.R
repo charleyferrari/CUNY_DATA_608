@@ -9,9 +9,7 @@ df$DATE <- as.POSIXct(strptime(df$DATE, format = '%m/%d/%y'))
 ui <- fluidPage(
   headerPanel('Housing Price Explorer'),
   sidebarPanel(
-    selectInput('seas', 'Seasonality', unique(df$Seasonality), selected='SA'),
-    selectInput('metro', 'Metro Area', unique(df$Metro), selected='Atlanta'),
-    selectInput('tier', 'Housing Tier', unique(df$Tier), selected='High')
+    selectInput('metro', 'Metro Area', unique(df$Metro), selected='Atlanta')
   ),
   mainPanel(
     plotOutput('plot1')
@@ -23,7 +21,7 @@ server <- function(input, output) {
   output$plot1 <- renderPlot({
     
     dfSlice <- df %>%
-      filter(Metro == input$metro)
+      filter(Metro == input$metro, Seasonality=='SA')
     
     ggplot(dfSlice, aes(x = DATE, y = HPI, color = Tier)) +
       geom_line()
