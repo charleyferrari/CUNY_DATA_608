@@ -13,6 +13,7 @@ I have provided you with data about the 5,000 fastest growing companies in the U
 
 inc <- read.csv("https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module1/Data/inc5000_data.csv", header= TRUE)
 
+
 ```
 
 And lets preview this data:
@@ -34,6 +35,9 @@ Think a bit on what these summaries mean. Use the space below to add some more r
 
 # Insert your code here, create more chunks as necessary
 
+
+
+
 ```
 
 ## Question 1
@@ -41,10 +45,37 @@ Think a bit on what these summaries mean. Use the space below to add some more r
 Create a graph that shows the distribution of companies in the dataset by State (ie how many are in each state). There are a lot of States, so consider which axis you should use. This visualization is ultimately going to be consumed on a 'portrait' oriented screen (ie taller than wide), which should further guide your layout choices.
 
 ```{r}
-
+library(dplyr)
+library(ggplot2)
+library(forcats)
 # Answer Question 1 here
 
+inc %>%   
+  mutate(state= fct_infreq(inc$State)) %>% 
+    ggplot( aes(x=state)) +
+    geom_bar(fill = 'lightblue' ) +
+    coord_flip() +
+    theme_bw() +
+    theme( axis.text.y = element_text( size =rel(0.7), angle = 0 )) +
+    ggtitle("Fastest growing company US") +
+    xlab('State') +
+    ylab(' Number of Companies by State ')
+
 ```
+
+By observing the graph we can appreciate that the state of California is the one that has the fastest growing companies.
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Quesiton 2
 
@@ -54,8 +85,20 @@ Lets dig in on the state with the 3rd most companies in the data set. Imagine yo
 
 # Answer Question 2 here
 
+#ny_data <- inc %>% filter(State == 'NY') %>% filter(complete.cases(.))
+
+inc %>% filter(State == 'NY') %>% filter(complete.cases(.)) %>%   
+    ggplot( aes(x=Industry, y=Employees)) +
+    geom_boxplot(fill = 'lightblue', outlier.colour = NA ) +
+    coord_flip(ylim = c(0, 800), expand = T) +
+    theme_minimal() +
+    stat_summary(fun.y = "mean", colour = "darkorange", size = 1, geom = "point") +
+    ggtitle("Employees by NY states Indutries") +
+    xlab('Industry') +
+    ylab("")
 ```
 
+In the graph with can see some outliers which affect the mean of employees.One solution is that we dont show the Outlier in the graph.
 ## Question 3
 
 Now imagine you work for an investor and want to see which industries generate the most revenue per employee. Create a chart that makes this information clear. Once again, the distribution per industry should be shown.
@@ -64,6 +107,17 @@ Now imagine you work for an investor and want to see which industries generate t
 
 # Answer Question 3 here
 
+
+ inc %>% group_by(Industry) %>% summarise(mean = mean(Revenue),n =n()) %>% 
+    ggplot( aes(x=reorder(Industry,mean),y=mean), stat = "identity") +
+    geom_col(fill = 'lightblue' ) +
+    coord_flip() +
+    theme_bw() +
+    ggtitle("New York Average Revenue by employees ") +
+    xlab('Industry') +
+    ylab(' ')
+
 ```
 
+We can see that Computer Hardware has the highest mean revenue 
 
