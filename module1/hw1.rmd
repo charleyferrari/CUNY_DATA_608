@@ -35,7 +35,9 @@ Think a bit on what these summaries mean. Use the space below to add some more r
 
 # Insert your code here, create more chunks as necessary
 
-
+suppressMessages(library(dplyr))
+library(ggplot2)
+library(forcats)
 
 
 ```
@@ -45,9 +47,6 @@ Think a bit on what these summaries mean. Use the space below to add some more r
 Create a graph that shows the distribution of companies in the dataset by State (ie how many are in each state). There are a lot of States, so consider which axis you should use. This visualization is ultimately going to be consumed on a 'portrait' oriented screen (ie taller than wide), which should further guide your layout choices.
 
 ```{r}
-library(dplyr)
-library(ggplot2)
-library(forcats)
 # Answer Question 1 here
 
 inc %>%   
@@ -84,8 +83,6 @@ Lets dig in on the state with the 3rd most companies in the data set. Imagine yo
 ```{r}
 
 # Answer Question 2 here
-
-#ny_data <- inc %>% filter(State == 'NY') %>% filter(complete.cases(.))
 
 inc %>% filter(State == 'NY') %>% filter(complete.cases(.)) %>%   
     ggplot( aes(x=Industry, y=Employees)) +

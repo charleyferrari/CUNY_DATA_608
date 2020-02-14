@@ -226,22 +226,15 @@ summary {
 ##  Atlanta      :  74   IL     : 273  
 ##  (Other)      :4438   (Other):2764</code></pre>
 <p>Think a bit on what these summaries mean. Use the space below to add some more relevant non-visual exploratory information you think helps you understand this data:</p>
-<pre class="r"><code># Insert your code here, create more chunks as necessary</code></pre>
+<pre class="r"><code># Insert your code here, create more chunks as necessary
+
+suppressMessages(library(dplyr))
+library(ggplot2)
+library(forcats)</code></pre>
 <div id="question-1" class="section level2">
 <h2>Question 1</h2>
 <p>Create a graph that shows the distribution of companies in the dataset by State (ie how many are in each state). There are a lot of States, so consider which axis you should use. This visualization is ultimately going to be consumed on a ‘portrait’ oriented screen (ie taller than wide), which should further guide your layout choices.</p>
-<pre class="r"><code>library(dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: 'dplyr'</code></pre>
-<pre><code>## The following objects are masked from 'package:stats':
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library(ggplot2)
-library(forcats)
-# Answer Question 1 here
+<pre class="r"><code># Answer Question 1 here
 
 inc %&gt;%   
   mutate(state= fct_infreq(inc$State)) %&gt;% 
@@ -260,8 +253,6 @@ inc %&gt;%
 <h2>Quesiton 2</h2>
 <p>Lets dig in on the state with the 3rd most companies in the data set. Imagine you work for the state and are interested in how many people are employed by companies in different industries. Create a plot that shows the average and/or median employment by industry for companies in this state (only use cases with full data, use R’s <code>complete.cases()</code> function.) In addition to this, your graph should show how variable the ranges are, and you should deal with outliers.</p>
 <pre class="r"><code># Answer Question 2 here
-
-#ny_data &lt;- inc %&gt;% filter(State == 'NY') %&gt;% filter(complete.cases(.))
 
 inc %&gt;% filter(State == 'NY') %&gt;% filter(complete.cases(.)) %&gt;%   
     ggplot( aes(x=Industry, y=Employees)) +
