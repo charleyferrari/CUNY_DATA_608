@@ -46,7 +46,7 @@ Create a graph that shows the distribution of companies in the dataset by State 
 
 ```
 
-## Quesiton 2
+## Question 2
 
 Lets dig in on the state with the 3rd most companies in the data set. Imagine you work for the state and are interested in how many people are employed by companies in different industries. Create a plot that shows the average and/or median employment by industry for companies in this state (only use cases with full data, use R's `complete.cases()` function.) In addition to this, your graph should show how variable the ranges are, and you should deal with outliers.
 
