@@ -39,3 +39,36 @@ In addition, Tufte explains how design-based chart-junk in particular can be mi
 To preserve design, the data isn't properly represented. On the other hand, this same data can be represented in a visualization with chartjunk that is still superfluous, but not misleading:
 
 <img src="http://images.slideplayer.com/28/9387317/slides/slide_30.jpg" width="1280" height="720" />
+
+### Week 4: High Resolution Graphics
+
+Tufte devotes a chapter to high-resolution data graphics, and I would like to use this as an excuse to talk about visualizing large datasets in general.
+
+Tufte focuses on data density: the number of datapoints displayed divided by the total chart area. When thinking of examples of visualizing large datasets, try to think of creative ways that a high data density can be displayed. There are lots of interactive elements that make higher density displays more successful online, but feel free to focus on strategies that might not be limited to an online medium. Perhaps a unique visualization method was used, or there is a quality of the data that lends itself to being more clear as a dense visualization.
+
+For example: Tufte uses a New York weather chart as an example of a dense visualization.
+
+<img src="https://www.edwardtufte.com/bboard/images/00014g-836.jpg" />
+
+This image is fairly dense, but because it is displaying weather, the inherent seasonality makes it easier to read.
+
+Think about the ways visualizations can aggregate data as well. Basic types of aggregation visualization types include histograms (to aggregate large data across a single dimension) or heatmaps (to aggregate large data across two dimensions.) Any visualization type can be used to visualize aggregated data however. When asking questions of large datasets, not only is there a choice of visualization type, but a choice of aggregation.
+
+Think of unique strategies you've seen applied to big data. One example I use with clients at Plotly that goes beyond basic aggregation is a fake signal with random spikes added. Plotting out all the points results in a visualization that's pretty busy:
+
+<img src="https://plot.ly/~charleyferrari/690.png">
+
+Simply aggregating the data would preserve the patterns, but make us lose information about the spikes. To preserve more information, we could combine an aggregation with some other way to highlight spikes:
+
+<img src="https://plot.ly/~charleyferrari/699.png">
+
+This results in a cleaner visualization with minimal information loss.
+
+### Week 6: Small Multiples
+
+
+We talked about small multiples during our meetup, but check out [this link](http://www.juiceanalytics.com/writing/better-know-visualization-small-multiples) for some more information on them.
+
+In particular, pay attention to the specifics of Tufte's definition of small multiples: The small multiples can either be mapped to a quantitative variable not shown in the individual images, or it can be used to show motion over time, like frames in a movie. Keep theese distinctions in mind when talking about how the usefulness of small multiples changes in an interactive environment.
+
+Think tools like ggplot (facet_wrap or facet_grid) or Tableau. A lot of visualization packages have begun standardizing the concept of small multiples. Is this a good thing? Or does this lead to their overuse?
