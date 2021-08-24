@@ -8,9 +8,6 @@ These discussions are meant to be very open-ended. If you agree with the concept
 
 One theme I'd like to bring into all of our discussions is how visualizations on the web differ from the largely static visualizations Tufte discusses. Do these concepts apply to interactive visualizations, or does interactivity totally change what's possible?
 
-[link to Google!](http://google.com)
-![Tux, the Linux mascot](/assets/images/tux.png)
-
 
 ### Week 2: Data-Ink Ratio and ChartJunk
 
