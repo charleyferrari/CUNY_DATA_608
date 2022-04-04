@@ -93,13 +93,13 @@ Tufte also shows a creative example of using a grid to display the geographic in
 
 ### Week 10: Aesthetics and Technique
 
-The last chapter of Tufte's Visual Display of Quantitative Information Explains Aesthetics and Technique. He talks about a few qualities such as balance and professionalism in a visualization, but one tangible concept he talks about is the choice of design. Starting out with decisions on the placement of labels and text within a graph, he blurs the line between prose, data tables, and data visualizations. While we talked about how data visualizations can convey information more concisely than prose:
+The last chapter of Tufte's Visual Display of Quantitative Information Explains Aesthetics and Technique. He talks about a few qualities such as balance and professionalism in a visualization, but one tangible concept he talks about is the choice of design. Starting out with decisions on the placement of labels and text within a graph, he blurs the line between prose, data tables, and data visualizations. While we talked about how data visualizations can convey information more concisely than prose:>
 
-<img src="https://bbhosted.cuny.edu/bbcswebdav/pid-1674888-dt-forum-rid-143309379_1/xid-143309379_1" width="1704" height="632" />
+<img src="barinato.png" width="1704" height="632" />
 
 Tufte explains how text, in particular data tables, may sometimes be clearer. He gives the example of localized comparisons in a table. Economic releases, for example, are usually hierarchical and can be best represented in tables:
 
-<img src="https://bbhosted.cuny.edu/bbcswebdav/pid-1674888-dt-forum-rid-143309380_1/xid-143309380_1" width="2122" height="786" />
+<img src="nipa.png" width="2122" height="786" />
 
 Rather than just looking at individual visualizations, visualizations interspersed in text themselves can be designed for maximum impact, as she shows from images of Leonardo Davinci's manuscripts:
 
