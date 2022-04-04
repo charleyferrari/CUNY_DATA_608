@@ -99,7 +99,7 @@ The last chapter of Tufte's Visual Display of Quantitative Information Explain
 
 Tufte explains how text, in particular data tables, may sometimes be clearer. He gives the example of localized comparisons in a table. Economic releases, for example, are usually hierarchical and can be best represented in tables:
 
-<img src="nipa.png" width="2122" height="500" />
+<img src="nipa.png" width="2122" height="400" />
 
 Rather than just looking at individual visualizations, visualizations interspersed in text themselves can be designed for maximum impact, as she shows from images of Leonardo Davinci's manuscripts:
 
