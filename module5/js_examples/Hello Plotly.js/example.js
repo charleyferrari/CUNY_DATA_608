@@ -1,4 +1,5 @@
 Plotly.d3.csv('data/hpi.csv', function(rows) {
+  console.log(rows);
   // Build list of unique metros
   let metros = [];
   rows.forEach(function(d) {

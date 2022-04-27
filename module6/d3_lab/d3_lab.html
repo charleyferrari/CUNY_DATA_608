@@ -173,8 +173,6 @@
     <pre>
       <code>
         d3.csv('ue_industry.csv', data => {
-
-            console.log(data);
         
             const xScale = d3.scaleLinear()
                 .domain(d3.extent(data, d => +d.index))
